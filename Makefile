@@ -1,6 +1,13 @@
 SHELL := /bin/bash
 VIRTUALENV_ROOT := $(shell [ -z $$VIRTUAL_ENV ] && echo $$(pwd)/venv || echo $$VIRTUAL_ENV)
 
+export APPLICATION_NAME=api
+
+include ${DM_AWS_REPO}/app.Makefile
+
+BUILD_NUMBER ?= 0
+DEPLOY_BUILD_NUMBER ?= ${BUILD_NUMBER}
+
 run_all: requirements run_migrations run_app
 
 run_app: virtualenv
@@ -32,4 +39,6 @@ test_migrations: virtualenv
 test_unit: virtualenv
 	${VIRTUALENV_ROOT}/bin/py.test ${PYTEST_ARGS}
 
-.PHONY: virtualenv requirements requirements_for_test test_pep8 test_migrations test_unit test test_all run_migrations run_app run_all
+build: requirements ## Build project
+
+.PHONY: virtualenv requirements requirements_for_test test_pep8 test_migrations test_unit test test_all run_migrations run_app run_all build
