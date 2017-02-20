@@ -695,12 +695,31 @@
     "serviceCategories": {
       "items": {
         "enum": [
-          "Hosting type 1",
-          "Hosting type 2",
-          "Or maybe hosting doesn\u2019t have categories at all?"
+          "Archiving, backup and disaster recovery",
+          "Compute and application hosting",
+          "Container service",
+          "Content delivery network",
+          "Data warehousing",
+          "Database",
+          "Disk (block) storage",
+          "Distributed Denial of Service Attack (DDOS) protection",
+          "Firewall",
+          "Intrusion detection",
+          "Load balancing",
+          "Logging and analysis",
+          "Message queuing and processing",
+          "Networking (including Network as a Service)",
+          "NoSQL",
+          "Object storage",
+          "Platform as a Service (PaaS)",
+          "Protective monitoring",
+          "Relational",
+          "Search",
+          "Security",
+          "Storage"
         ]
       },
-      "maxItems": 3,
+      "maxItems": 10,
       "minItems": 0,
       "type": "array",
       "uniqueItems": true
